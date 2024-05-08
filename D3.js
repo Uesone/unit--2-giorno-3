@@ -127,6 +127,21 @@ console.log(
 /* ESERCIZIO 3
   Seguendo i passaggi precedenti crea un nuovo array chiamato "femaleCharacters" e inserisci al suo interno tutti gli oggetti femminili.
 */
+let countFemale = [0];
+let femaleCharacters = [0];
+
+for (let i = 0; i < starWarsCharacters.length; i++)
+  if (starWarsCharacters[i].gender === "female") {
+    countFemale++;
+  }
+console.log("quante femmine? prova", countFemale);
+
+for (let i = 0; i < starWarsCharacters.length; i++)
+  if (starWarsCharacters[i].gender === "female") {
+    femaleCharacters.push(starWarsCharacters[i]);
+  }
+
+console.log("Femmine. prova?:", femaleCharacters);
 
 /* ESERCIZIO 4
   Crea un oggetto "eyeColor" che abbia le seguenti proprietà: blue, yellow, brown, red, blue-gray.
