@@ -105,7 +105,7 @@ const starWarsCharacters = [
   Crea una variabile chiamata "charactersNames" e assegnale un array vuoto
 */
 
-let charactersNames = [0];
+let charactersNames = [];
 console.log("numero elementi charactersNames:", charactersNames.length);
 
 /* ESERCIZIO 2
@@ -127,8 +127,8 @@ console.log(
 /* ESERCIZIO 3
   Seguendo i passaggi precedenti crea un nuovo array chiamato "femaleCharacters" e inserisci al suo interno tutti gli oggetti femminili.
 */
-let countFemale = [0];
-let femaleCharacters = [0];
+let countFemale = [];
+let femaleCharacters = [];
 
 for (let i = 0; i < starWarsCharacters.length; i++)
   if (starWarsCharacters[i].gender === "female") {
@@ -190,7 +190,7 @@ console.log(
 */
 
 let crewMass = 0;
-let i = 0; /* perchè qua la variabile i va specificata e su for no? avrei potuto usare un for? quale è meglio? */
+let i = 0; /* perchè qua la variabile i va specificata fuori dalla "funzione" e su for no? avrei potuto usare un for? quale è meglio? */
 
 while (i < starWarsCharacters.length) {
   crewMass += starWarsCharacters[i].mass;
