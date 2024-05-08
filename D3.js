@@ -82,7 +82,7 @@ const starWarsCharacters = [
   {
     name: "Biggs Darklighter",
     height: 183,
-    mass: 84,
+    mass: 184 /* cambuato la massa qui */,
     hair_color: "black",
     skin_color: "light",
     eye_color: "brown",
@@ -148,14 +148,56 @@ console.log("Femmine. prova?:", femaleCharacters);
   Ad ognuna di queste proprietà assegna come valore un array vuoto.
 */
 
+let eyeColor = {
+  blue: [],
+  yellow: [],
+  brown: [],
+  red: [],
+  "blue-gray": [],
+};
+
 /* ESERCIZIO 5
   Utilizza uno switch statement per inserire uno ad uno gli oggetti dei personaggi di "starWarsCharacters" negli array relativi al colore degli occhi precedentemente creati.
   Ogni personaggio dovrà finire nell'array corrispondente al suo colore degli occhi (al valore della sua proprietà "eye_color").
 */
 
+for (let i = 0; i < starWarsCharacters.length; i++)
+  switch (starWarsCharacters[i].eye_color) {
+    case "blue":
+      eyeColor.blue.push(starWarsCharacters[i]);
+      break;
+    case "yellow":
+      eyeColor.yellow.push(starWarsCharacters[i]);
+      break;
+    case "brown":
+      eyeColor.brown.push(starWarsCharacters[i]);
+      break;
+    case "red":
+      eyeColor.red.push(starWarsCharacters[i]);
+      break;
+    case "blue-gray":
+      eyeColor["blue-gray"].push(starWarsCharacters[i]);
+      break;
+    default:
+      console.log("prova prova", starWarsCharacters[i].eye_color);
+  }
+console.log(
+  "Personaggi in base al colore degli occhi:" + eyeColor
+); /* non ho capito perche non funziona. sono stupido? */
+
 /* ESERCIZIO 6
   Usa un while loop per calcolare la massa totale dell'equipaggio. Salvala in una variabile chiamata "crewMass".
 */
+
+let crewMass = 0;
+let i = 0; /* perchè qua la variabile i va specificata e su for no? avrei potuto usare un for? quale è meglio? */
+
+while (i < starWarsCharacters.length) {
+  crewMass += starWarsCharacters[i].mass;
+  i++;
+}
+
+console.log("Massa totale:" + crewMass);
 
 /* ESERCIZIO 7
   Crea uno if/else statement per rivelare la tipologia di carico, utilizzando la massa totale, di un'ipotetica astronave contenente i personaggi dell'array "starWarsCharacters".
@@ -168,6 +210,18 @@ console.log("Femmine. prova?:", femaleCharacters);
 
   Una volta fatto, modifica la massa di qualche elemento dell'equipaggio e vedi se riesci ad ottenere un messaggio diverso.
 */
+
+if (crewMass < 500) {
+  console.log("Ship is under loaded");
+} else if (crewMass >= 500 && crewMass < 700) {
+  console.log("Ship is half loaded");
+} else if (crewMass >= 700 && crewMass < 900) {
+  console.log("Warning: Load is over 700");
+} else if (crewMass >= 900 && crewMass < 1000) {
+  console.log("Critical Load: Over 900");
+} else {
+  console.log("DANGER! OVERLOAD ALERT: escape from ship now!");
+}
 
 /* ESERCIZIO 8
   Usa un for loop per cambiare il valore della proprietà "gender" di alcuni personaggi dal valore "n/a" a "robot" (Tip: puoi effettuare la riassegnazione del valore corrispondente o creare un nuovo array)
